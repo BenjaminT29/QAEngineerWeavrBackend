@@ -6,7 +6,8 @@ import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
 @NoArgsConstructor
-public @Data class UpdateUserModel {
+@Data
+public class UpdateUserModel {
 
     private String name;
     private String gender;
