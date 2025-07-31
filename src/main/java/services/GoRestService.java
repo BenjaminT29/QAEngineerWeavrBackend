@@ -28,13 +28,13 @@ public class GoRestService extends BaseService {
     public static Response deleteUser(String id){
         return defaultRequestSpecification()
                 .when()
-                .delete("/public/v1/users/"+id);
+                .delete("/public/v1/users/{id}");
     }
     public static Response deleteUserWithoutAuthentication(String id){
         return  restAssured()
                 .header("Content-type", "application/json")
                 .when()
-                .delete("/public/v1/users/"+id);
+                .delete("/public/v1/users/{id}");
     }
     public static Response getAllUsers(){
         return defaultRequestSpecification()
@@ -57,18 +57,18 @@ public class GoRestService extends BaseService {
         return defaultRequestSpecification()
                 .when()
                 .body(updateUserModel)
-                .put("/public/v1/users/"+id);
+                .put("/public/v1/users/{id}");
     }
     public static Response updateUserWithoutAuthentication(UpdateUserModel updateUserModel, String id){
         return  restAssured()
                 .header("Content-type", "application/json")
                 .body(updateUserModel)
                 .when()
-                .put("/public/v1/users/"+id);
+                .put("/public/v1/users/{id}");
     }
     public static Response updateUserWithoutBody(UpdateUserModel updateUserModel, String id){
         return defaultRequestSpecification()
                 .when()
-                .put("/public/v1/users/"+id);
+                .put("/public/v1/users/{id}");
     }
 }
